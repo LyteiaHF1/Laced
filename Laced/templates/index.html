@@ -28,8 +28,8 @@
          <br/>
          <br/>
             <!--<h2>I don't know you!</h2>-->
-         <button class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='twitter') }}">Laced with Twitter</a></button>
-         <button class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='facebook') }}">Laced with Facebook</a></button>    
+           <button style="position: absolute; left: 20%; right: 20%; bottom: 5%;" class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='twitter') }}">Laced with Twitter</a></button>
+         <button style="position: absolute; left: 40%; right: 20%; bottom: 5%;" class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='facebook') }}">Laced with Facebook</a></button>    
         {% endif %}
         </div>
     </body>

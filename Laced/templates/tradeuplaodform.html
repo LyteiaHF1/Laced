@@ -1,0 +1,29 @@
+<html>   
+    <head>
+        <title>Laced</title>
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+    </head>
+    <body> 
+       <header>
+            <h1><img src='static/lacedlogo_1.png' /></h1>
+        </header>
+        
+        <p>Laced is all about Trading in a safe way! Make sure to add size, condition and a brief description along with a good image the better the image, and description the better chance of someone making a offer on the item</p>
+
+        <form class="pure-form pure-form-aligned"  method="POST" action="static/upload.php" enctype="multipart/form-data">
+        <label>Item Name:</label> <input required="required" /><br/>
+        <label>Condition:</label> <input required="required" /><br/>
+        <label>Size:</label> <input required="required" /><br/>
+        <label>Description:</label> <input /><br/>
+		<label>Trade:</label> <input type="file" name="userfile" required="required" /><br/><br/>
+
+        <button>Upload</button>
+	</form>
+
+    </body>
+</html>
+

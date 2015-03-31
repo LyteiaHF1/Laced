@@ -1,0 +1,151 @@
+/*
+Lyteia Kitchen
+Laced
+Final Project
+*/
+html{	
+	font-weight: 300;    
+}
+body{ 
+ background-color: #F4F3DC;  
+
+}
+
+header{
+  background-color: #EEE8D4; 
+  height: 125px;
+}
+
+nav{
+    float: right;
+}
+
+body{
+    background-color: #F4F3DC;/*site main bg color*/
+}
+
+.landing{
+   background-image: url(2.jpg), url(3.jpg), url(4.jpg), url(5.jpg);
+   background-position: top left, top right, bottom left, bottom right;
+   background-repeat: no-repeat;  
+}
+
+#main{
+	width: 50%;
+	padding: 50px;
+	margin: 50px auto;
+	text-align: center;
+}
+
+button.paypal-button.large{
+    width: 95px;
+    padding: 0;
+}
+
+#main{
+	margin-top: 20px;
+}
+
+button{
+    border: 1px solid;
+    border-radius: 10px;
+    background:#99b9d9;
+}
+
+.login a:link {
+    text-decoration: none;
+    background-color:#99b9d9;
+   
+}
+
+.login a:visited {
+    text-decoration: none;
+    background-color:#99b9d9;
+}
+
+.login a:hover {
+    text-decoration: none;
+    background-color:#99b9d9;
+}
+
+.login a:active {
+    text-decoration: none;
+    background-color:#99b9d9;
+}
+
+h1, h2, h3 , h4, h5, h6,span{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: #076BB6;
+}
+
+.home div{
+    background-color: #EEE8D4;
+}
+
+p{
+	font-size: 13px;
+}
+
+.scroll-content{
+	background-color: #F4F3DC;
+}
+
+.bar-dark{
+	background-color: #EEE8D4;
+}
+.center{
+	margin: 0 auto;
+}
+
+#home{
+	background-color: #F4F3DC;
+	margin-top: 35px;
+}
+#home.scroll{
+	margin-top: 20px;
+}
+
+
+/*         PROFILE
+===========================
+*/
+
+.closet_profile{
+	color: #555555;
+}
+
+.profile_top{
+	margin-top: -6px;
+	height: 65px;
+	-webkit-box-shadow: 0 8px 6px -3px black; 
+	-moz-box-shadow: 0 8px 6px -6px black; 
+	box-shadow: 0 8px 6px -6px black;
+}
+.profile_pic{
+	margin-top: -50px;
+}
+.profile_name{
+	background-color: #F4F3DC;
+}
+
+.btm_shadow{
+	-webkit-box-shadow: 0 8px 6px -6px black; 
+	-moz-box-shadow: 0 8px 6px -6px black; 
+	box-shadow: 0 8px 6px -6px black;
+}
+
+.right_border{
+	border-right: 1px solid black;
+}
+div.row.count{
+	padding-bottom: 25px;
+}
+
+}
+
+#bio{
+	font-size: 12px;
+
+}
+
+

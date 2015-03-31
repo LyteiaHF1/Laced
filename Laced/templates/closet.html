@@ -1,0 +1,117 @@
+<html>   
+    <head>
+        <title>Laced</title>
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+    </head>
+    <body>
+        <header>
+            <h1><img src='static/lacedlogo_1.png' /></h1> 
+            <nav>
+                <a href='/home'>Home</a>
+                <a href='/store'>Shop</a>
+                <a href='/trade'>Trade</a>
+                <a href='/closet'>Closet</a>
+                    <button><a href="{{ url_for('logout') }}">Logout</a></button>
+            </nav>
+        </header>
+       
+  		<!-- Profile Pic + Name 
+	  	=====================================
+	  	-->
+	  	<div class="closet_profile">
+	  		
+	  		<!-- Profile Picture-->
+            <br/>
+		  	<div class="row">
+		  		<div class="col col-33 col-offset-33 center">
+		  			<img class="profile_pic" src="static/profilepic.jpg">
+		  		</div>
+		  	</div> <!-- / row -->
+
+		  	<!-- Profile Username and Status -->
+		  	<div class="row">
+		  		<div class="col center">
+	   				<h4>Lyte </h4>
+	   			</div>
+	   		</div>
+            
+		  	<!-- ACTIVE, SUCCESS, COUNT
+		  	=====================================
+		  	-->
+			<div class="btm_shadow">
+				<div class="row count">
+					
+					<!-- Active Trade Count -->
+		   			<div class="col right_border">
+		   				<h4 class="center">83</h4>
+		   				<p class="center">ACTIVE</p>
+		   			</div>
+
+		   			<!-- Success Count -->
+		   			<div class="col right_border">
+		   				<h4 class="center">10</h4>
+		   				<p class="center">SUCCESS</p>
+		   			</div>
+
+		  		</div>
+
+		  		<!-- TRADE BUTTON 
+				=================================
+		  		-->
+				<div class="row">
+				  	<div class="col">
+                        <!--- user trade upload --> 
+                         <button><a href="{{ url_for('tradeupload') }}">Trade</a></button>
+				  	</div>
+				</div>
+			</div> <!-- / btm_shadow -->
+            
+            	<!-- BIO 
+			=================================
+		  	-->
+		  	<div class="row">
+		  		<div class="col"><h4 style="border-left:5px solid #1798D4; padding-left: 5px;">BIO</h4></div>
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col"><p id="bio">Sole Collector, Everything OG! Highend Sneakers Have My Attention For Now </p></div>
+		  	</div>
+
+			<!-- BIO -->
+		  	<div class="row">
+		  		<div class="col">
+		  			<h4 style="border-left:5px solid #1798D4; padding-left: 5px;">RECENT CLOSET</h4>
+		  		</div>
+		  	</div>
+
+		  	<!-- CLOSET GALLERY 
+			=================================
+		  	-->
+		  	<div class="row">
+		  		<div class="col center">
+		  			<a href="#"><img src="static/4.jpg"></a>
+		  		</div>
+		  		<div class="col center">
+		  			<a href="#"><img src="static/2.jpg"></a>
+		  		</div>
+		  		<div class="col center">
+		  			<a href="#"><img src="static/3.jpg"></a>
+		  		</div>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col all_drops">
+		  			
+		  		</div>
+		  	</div>
+	  	</div> <!-- closet page -->
+        
+        
+        
+    </body>
+</html>
+
+

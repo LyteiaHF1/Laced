@@ -1,0 +1,36 @@
+<html>   
+    <head>
+        <title>Laced</title>
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+    </head>
+    <body class='landing'> 
+      <br/>
+      <br/>
+      <br/>
+        <div id='main'>
+		<img src='static/hmpg_logo1.png' />
+       <!-- <h1>Laced</h1> -->
+
+        {% for message in get_flashed_messages() %}
+            <p><b>Error</b>: {{ message }}</p>
+        {% endfor %}
+            <!---
+        {% if current_user.is_authenticated() %}
+
+            <h2>Hi, {{ current_user.nickname }}!</h2>
+            <button><a href="{{ url_for('logout') }}">Logout</a></button>
+        {% else %} -->
+         <br/>
+         <br/>
+         <br/>
+            <!--<h2>I don't know you!</h2>-->
+         <button class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='twitter') }}">Laced with Twitter</a></button>
+         <button class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='facebook') }}">Laced with Facebook</a></button>    
+        {% endif %}
+        </div>
+    </body>
+</html>

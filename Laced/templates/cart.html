@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Laced</title>
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+
+    </head>
+    <body>
+        <h1><img src='static/hmpg_logo1.png' width='150'/></h1>
+       <h2>Hi, {{ current_user.nickname }}!</h2>
+        <button><a href="{{ url_for('logout') }}">Logout</a></button>
+      <br/>
+      <center><h2>Cart</h2></center>
+
+
+
+    </body>
+</html>
+

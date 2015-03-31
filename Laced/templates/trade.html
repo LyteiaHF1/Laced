@@ -1,0 +1,32 @@
+<html>   
+    <head>
+        <title>Laced</title>
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+    </head>
+    <body> 
+         <header>
+            <h1><img src='static/lacedlogo_1.png' /></h1> 
+            <nav>
+                <a href='/home'>Home</a>
+                <a href='/store'>Shop</a>
+                <a href='/trade'>Trade</a>
+                <a href='/closet'>Closet</a>
+            </nav>
+        </header>
+        
+        <h1>Trade page</h1>
+        <!--- Adding Trade Images Here -->
+        
+           {% for item in pagedata %}
+            {{item[0]}}  {{item[1]}} {{item[2]}}
+
+        {% endfor %}
+
+
+    </body>
+</html>
+

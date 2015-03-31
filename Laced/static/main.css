@@ -25,8 +25,7 @@ body{
 }
 
 .landing{
-   background-image: url(2.jpg), url(3.jpg), url(4.jpg), url(5.jpg);
-   background-position: top left, top right, bottom left, bottom right;
+   background-image: url(landingpage.png);
    background-repeat: no-repeat;  
 }
 

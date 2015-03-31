@@ -27,6 +27,14 @@ body{
 .landing{
    background-image: url(landingpage.png);
    background-repeat: no-repeat;  
+   display: block;
+   width: 960px;
+   padding: 5px;
+   margin-bottom: 20px;
+   background-color: #eeeeee;
+   -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 #main{
@@ -147,4 +155,43 @@ div.row.count{
 
 }
 
+/*        MEDIA QUERIES
+===========================
+*/
 
+@media only screen and (max-width: 980px) {        
+.landing {
+background-size: contain;
+width: 980px;
+
+}   
+ }
+
+ @media only screen  and (min-width: 981px) and (max-width: 1081px) {   
+.landing {
+width: 980px;        
+        background-size: contain;
+
+}   
+ }
+
+ @media only screen  and (min-width: 1082px) and (max-width: 1181px) {  
+.landing {
+   width: 1082px;
+background-size: contain;
+}   
+ }
+
+ @media only screen  and (min-width: 1182px) and (max-width: 1281px) {  
+.landing {
+width: 1182px;
+background-size: contain;
+}   
+}
+
+ @media only screen  and (min-width: 400px) and (max-width: 600px) {  
+.landing {
+width: 400px;
+background-size: contain;
+}   
+ }

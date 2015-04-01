@@ -8,7 +8,6 @@
     <link rel='stylesheet' type='text/css' href='static/main.css'/>
     </head>
     <body class='landing'> 
-      <br/>
         <div id='main'>
 		  <img src='static/laced_logo.png' />
        <!-- <h1>Laced</h1> -->
@@ -16,16 +15,9 @@
         {% for message in get_flashed_messages() %}
             <p><b>Error</b>: {{ message }}</p>
         {% endfor %}
-            <!---
-        {% if current_user.is_authenticated() %}
-
-            <h2>Hi, {{ current_user.nickname }}!</h2>
-            <button><a href="{{ url_for('logout') }}">Logout</a></button>
-        {% else %} -->
          <br/>
          <br/>
          <br/>
-            <!--<h2>I don't know you!</h2>-->
            <button style="position: absolute; left: 20%; right: 20%; bottom: 5%;" class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='twitter') }}">Laced with Twitter</a></button>
          <button style="position: absolute; left: 50%; right: 20%; bottom: 5%;" class='login' type="button"><a href="{{ url_for('oauth_authorize', provider='facebook') }}">Laced with Facebook</a></button>    
         {% endif %}

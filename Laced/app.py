@@ -82,6 +82,27 @@ def closet():
 def tradeupload():
         return render_template('tradeuplaodform.html')
 
+    
+# Route that will process the file upload
+@app.route('/upload', methods=['POST'])
+def upload():
+    # Get the name of the uploaded file
+    file = request.files['file']
+    # Check if the file is one of the allowed types/extensions
+    if file and allowed_file(file.filename):
+        # Make the filename safe, remove unsupported chars
+        filename = secure_filename(file.filename)
+        # Move the file form the temporal folder to
+        # the upload folder we setup
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return redirect(url_for('trade'))
+
+# This route is expecting a parameter containing the name
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'],
+                               filename)
+    
 @app.route('/logout')
 def logout():
     logout_user()

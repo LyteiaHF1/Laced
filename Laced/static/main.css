@@ -47,14 +47,16 @@ button.paypal-button.large{
     padding: 0;
 }
 
-#main{
-	margin-top: 20px;
-}
 
 button{
-    border: 1px solid;
     border-radius: 10px;
     background:#99b9d9;
+}
+
+.login{
+    font: 20px 'BEBAS';
+    color: #0D130D;
+    width: 230px;
 }
 
 .login a:link {

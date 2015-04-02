@@ -129,7 +129,8 @@ p{
 	box-shadow: 0 8px 6px -6px black;
 }
 .profile_pic{
-	margin-top: -50px;
+	margin-top: -15px;
+    margin-left: -54px;
 }
 .profile_name{
 	background-color: #F4F3DC;
@@ -154,6 +155,65 @@ div.row.count{
 	font-size: 12px;
 
 }
+
+.bio{
+  margin-top: -80px;
+  margin-left: 5px;
+}
+
+.trades{
+    margin-top: -248px;
+    margin-left: -45px;
+    float: right;
+    width: 230px;
+    font: 20px 'BEBAS';
+    color: #0D130D;
+}
+
+.statsA{
+   margin-top: -265px;
+   margin-right: 189px;
+   margin-left: -10px;
+   float: right; 
+   font: 20px 'BEBAS';
+   color: #0D130D;
+}
+
+.statsS{
+   margin-top: -265px;
+   margin-right: 80px;
+   float: right;
+   font: 20px 'BEBAS';
+   color: #0D130D;
+}
+
+.stats1{
+    margin-top: -239px;
+    margin-left: -45px;
+    float: right;
+    width: 230px;
+    font: 20px 'BEBAS';
+    color: #0D130D;
+}
+
+.stats2{
+    margin-top: -238px;
+    margin-right: -105px;
+    float: right;
+    width: 230px;
+    font: 20px 'BEBAS';
+    color: #0D130D;
+}
+
+.editProfile{
+    margin-top: -50px;
+    margin-left: 2px;
+    width: 100px;
+    font: 12px 'BEBAS';
+    color: #0D130D;
+}
+
+
 
 /*        MEDIA QUERIES
 ===========================

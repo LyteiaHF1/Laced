@@ -28,33 +28,32 @@
             <br/>
 		  	<div class="row">
 		  		<div class="col col-33 col-offset-33 center">
-		  			<img class="profile_pic" src="static/profilepic.jpg">
+		  			<img class="profile_pic" src="static/profile_pic.png">
 		  		</div>
 		  	</div> <!-- / row -->
 
 		  	<!-- Profile Username and Status -->
 		  	<div class="row">
 		  		<div class="col center">
-	   				<h4>Lyte </h4>
+	   				<h4 class='username'>Lyte </h4>
 	   			</div>
 	   		</div>
             
 		  	<!-- ACTIVE, SUCCESS, COUNT
 		  	=====================================
 		  	-->
-			<div class="btm_shadow">
 				<div class="row count">
 					
 					<!-- Active Trade Count -->
 		   			<div class="col right_border">
-		   				<h4 class="center">83</h4>
-		   				<p class="center">ACTIVE</p>
+		   				<h4 class='statsA' class="center">83</h4>
+		   				<p class='stats1' class="center">ACTIVE</p>
 		   			</div>
 
 		   			<!-- Success Count -->
 		   			<div class="col right_border">
-		   				<h4 class="center">10</h4>
-		   				<p class="center">SUCCESS</p>
+		   				<h4 class='statsS' class="center">10</h4>
+		   				<p class='stats2' class="center">SUCCESS</p>
 		   			</div>
 
 		  		</div>
@@ -65,23 +64,25 @@
 				<div class="row">
 				  	<div class="col">
                         <!--- user trade upload --> 
-                         <button><a href="{{ url_for('tradeupload') }}">Trade</a></button>
+                        <button class='trades'><a href="{{ url_for('tradeupload') }}">Trade</a></button> 
 				  	</div>
 				</div>
-			</div> <!-- / btm_shadow -->
+			 <!-- / btm_shadow -->
             
             	<!-- BIO 
 			=================================
 		  	-->
+            <!--
 		  	<div class="row">
 		  		<div class="col"><h4 style="border-left:5px solid #1798D4; padding-left: 5px;">BIO</h4></div>
-		  	</div>
+		  	</div> -->
 
 		  	<div class="row">
-		  		<div class="col"><p id="bio">Sole Collector, Everything OG! Highend Sneakers Have My Attention For Now </p></div>
+		  		<div class='bio' class="col"><p id="bio">Sole Collector, Everything OG! Highend Sneakers Have My Attention For Now </p></div>
 		  	</div>
-
-			<!-- BIO -->
+            <button class='editProfile'><a href="">Edit Profile</a></button> 
+            
+<!--- Divider Needs To Be Here -->
 		  	<div class="row">
 		  		<div class="col">
 		  			<h4 style="border-left:5px solid #1798D4; padding-left: 5px;">RECENT CLOSET</h4>
@@ -102,11 +103,7 @@
 		  			<a href="#"><img src="static/3.jpg"></a>
 		  		</div>
 		  	</div>
-		  	<div class="row">
-		  		<div class="col all_drops">
-		  			
-		  		</div>
-		  	</div>
+		  	
 	  	</div> <!-- closet page -->
         
         

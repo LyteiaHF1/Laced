@@ -52,7 +52,12 @@ def home():
     #selects product, price and image form database
     cur.execute('select productName, price from store')
     data = cur.fetchall()
-    return render_template('home.html', pagedata = data)
+    #grabs trades from database
+    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
+    cur1 = db.cursor()
+    cur1.execute('select tradeName from trade')
+    tradedata = cur1.fetchall()
+    return render_template('home.html', pagedata = data, trade = tradedata)
     
 @app.route('/store')
 def shop():

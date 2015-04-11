@@ -26,9 +26,18 @@
          <br />
          <br />
 
+            <h4>Shop</h4> <!--- temp heading just to show what db call is printing where -->
         {% for item in pagedata %}
          <div class="home">
-            {{item[0]}} - {{item[1]}}{{item[2]}} 
+            {{item[0]}} - {{item[1]}}{{item[2]}} <br/>
+
+             <!--<a href=/cart type="submit" value="add"> Add to cart</a> -->
+             <!--- shows the items in pagedata -->
+
+        {% endfor %}
+             <h4>Trades</h4> <!--- temp heading just to show what db call is printing where -->
+             {% for item in trade %}
+                {{item[0]}} - {{item[1]}}
 
              <!--<a href=/cart type="submit" value="add"> Add to cart</a> -->
              <!--- shows the items in pagedata -->

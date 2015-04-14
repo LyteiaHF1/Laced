@@ -29,6 +29,16 @@
         {{ pagedata }} -->
          <br />
          <br />
+         <select class='shopdrops'>
+            <option value="condition">Condition</option>
+        </select>
+          <select class='shopdrops shopdropsfloat'>
+            <option value="size">Size</option>
+        </select>
+          <select class='shopdrops shopdropsfloat'>
+            <option value="price">Price</option>
+        </select>
+        <img id='shopicon' src='static/cart_icon.png' />
 
         {% for item in pagedata %}
          <div class="shop">

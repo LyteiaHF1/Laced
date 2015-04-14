@@ -168,6 +168,7 @@ div.row.count{
     width: 230px;
     font: 20px 'BEBAS';
     color: #0D130D;
+    background-color: #F7EC31;
 }
 
 .statsA{
@@ -211,6 +212,28 @@ div.row.count{
     width: 100px;
     font: 12px 'BEBAS';
     color: #0D130D;
+}
+
+
+/*        SHOP
+===========================
+*/
+
+#shopicon{
+    float: right;
+    margin-top: -85px;
+    margin-right: 9px;
+}
+
+.shopdrops{
+    width: 120px;
+    margin-top: -15px;
+    margin-left: 9px;
+}
+
+.shopdropsfloat{
+
+   
 }
 
 

@@ -65,9 +65,20 @@ def shop():
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()
     #selects product, price and image form database
-    cur.execute('select productName, price, img from store')
+    cur.execute('select productId, productName, price, img from store')
     data = cur.fetchall()
     return render_template('shop.html', pagedata = data)
+
+
+@app.route('/shop/<id>')
+def shopdetail(id):
+    #need to associate each shop item by id, detail page gets id from clicked on link in shop then takes to item page where user can add to cart and view more images if avalibile
+    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
+    cur = db.cursor()
+    #selects product, price and image form database
+    cur.execute('select productId,productName, price, Img, size from store')
+    data = cur.fetchall()
+    return render_template('detail.html', pagedata = data)
 
 @app.route('/trade')
 def trade():
@@ -75,7 +86,7 @@ def trade():
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()
     #selects product, price and image form database
-    cur.execute('select tradeName, size, con from trade')
+    cur.execute('select id, tradeName, size, con from trade')
     data = cur.fetchall()
     return render_template('trade.html', pagedata = data)
 

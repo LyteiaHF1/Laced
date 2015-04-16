@@ -40,12 +40,12 @@
         </select>
         <img id='shopicon' src='static/cart_icon.png' />
 
-        {% for item in pagedata %}
+         {% for item in pagedata %}
          <div class="shop">
-            {{item[0]}} - {{item[1]}}{{item[2]}} <a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+           <a href="/shop/{{item[0]}}"> {{item[1]}} - {{item[2]}}{{item[3]}} </a> <a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"
-    data-name="{{item[0]}}"
-    data-amount="{{item[1]}}"
+    data-name="{{item[1]}}"
+    data-amount="{{item[2]}}"
     async
 ></script></a>
 

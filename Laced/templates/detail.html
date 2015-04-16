@@ -1,28 +1,30 @@
-<html>
+<html>   
     <head>
         <title>Laced</title>
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-        <link rel='stylesheet' type='text/css' href='static/base.css'/>
-        <link rel='stylesheet' type='text/css' href='static/layout.css'/>
-        <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
-        <link rel='stylesheet' type='text/css' href='static/main.css'/>
-
+    <link rel='stylesheet' type='text/css' href='static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+   
     </head>
-    <body>
-        <h1><img src='static/hmpg_logo1.png' width='150'/></h1>
-      <br/>
-        <nav>
-            <a href='/'>Home</a>
-            <a href='/store'>Shop</a>
-            <a href='/trades'>Trade</a>
-            <a href='/closet'>Closet</a>
-        </nav>
+    <body> 
+      <header>
+            <h1><img src='static/lacedlogo_1.png' /></h1> 
+           <nav>
+                <a href='/home'>Home</a>
+                <a href='/store'>Shop</a>
+                <a href='/trade'>Trade</a>
+                <a href='/closet'>Closet</a>
+                  <!---  <button><a href="{{ url_for('logout') }}">Logout</a></button> -->
+            </nav>      
+        </header>
 
 
                 <h1>Detail Page</h1>
 
                     {% for item in pagedata %}
-         <div>
+        <div class="shop">
             {{item[0]}} - {{item[1]}} <a href=/store/id > Delete</a>  <!--- shows the items in pagedata --><br>
 
         {% endfor %}

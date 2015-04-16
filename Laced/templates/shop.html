@@ -42,7 +42,7 @@
 
          {% for item in pagedata %}
          <div class="shop">
-           <a href="/shop/{{item[0]}}"> {{item[1]}} - {{item[2]}}{{item[3]}} </a> <a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+            <a href="/shop/{{item[0]}}"> <img src='{{item[3]}}' /> {{item[1]}} {{item[2]}}</a> <a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"
     data-name="{{item[1]}}"
     data-amount="{{item[2]}}"

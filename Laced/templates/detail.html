@@ -25,7 +25,8 @@
 
                     {% for item in pagedata %}
         <div class="shop">
-            {{item[0]}} - {{item[1]}} <!--- shows the items in pagedata --><br>
+            <img src='{{item[3]}}' />
+          <p>Name: {{item[1]}}</p>   <p>Price: {{item[2]}}</p>  <!--- shows the items in pagedata --><br>
 
         {% endfor %}
          </div>

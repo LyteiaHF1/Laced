@@ -42,12 +42,14 @@
 
          {% for item in pagedata %}
          <div class="shop">
-            <a href="/shop/{{item[0]}}"> {{item[1]}} <br/><img src='{{item[3]}}' /> <!--{{item[2]}} {{item[5]}}--></a><a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+                   <div class='Main'>
+           <a href="/shop/{{item[0]}}"> {{item[1]}} <br/><img src='{{item[3]}}' /> <!--{{item[2]}} {{item[5]}}--></a> <!--<a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"
     data-name="{{item[1]}}"
     data-amount="{{item[2]}}"
     async
-></script></a>
+></script></a>-->
+             </div>
 
              <!--<a href=/cart type="submit" value="add"> Add to cart</a> -->
              <!--- shows the items in pagedata -->

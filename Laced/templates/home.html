@@ -29,15 +29,15 @@
             <h4>Shop</h4> <!--- temp heading just to show what db call is printing where -->
         {% for item in pagedata %}
          <div class="home">
-            {{item[1]}}-{{item[2]}}  <button><a href="/shop/{{item[0]}}">View</a></button> <br/>
+            {{item[1]}}-{{item[2]}}  <button><a href="/shop/{{item[0]}}">Shop</a></button> <br/>
 
              <!--<a href=/cart type="submit" value="add"> Add to cart</a> -->
              <!--- shows the items in pagedata -->
 
         {% endfor %}
              <h4>Trades</h4> <!--- temp heading just to show what db call is printing where -->
-             {% for item in trade %}
-                {{item[0]}} - {{item[1]}}
+                  {% for item in trade %}
+             {{item[0]}} - {{item[1]}} <button><a href="/shop/{{item[0]}}">Trade</a></button> <br/>
 
              <!--<a href=/cart type="submit" value="add"> Add to cart</a> -->
              <!--- shows the items in pagedata -->

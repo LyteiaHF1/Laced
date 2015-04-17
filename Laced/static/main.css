@@ -7,8 +7,7 @@ html{
 	font-weight: 300;    
 }
 body{ 
- background-color: #F4F3DC;  
-
+    background-color: #F4F3DC;  
 }
 
 header{
@@ -18,6 +17,7 @@ header{
 
 nav{
     float: right;
+    font-family:'BEBAS';
 }
 
 body{
@@ -25,8 +25,10 @@ body{
 }
 
 .landing{
+   /*background-image: url(2.jpg), url(3.jpg), url(4.jpg), url(5.jpg);
+   background-position: top left, top right, bottom left, bottom right;*/
    background-image: url(landingpage.png);
-   background-repeat: no-repeat;  
+   background-repeat: no-repeat; 
    display: block;
    width: 960px;
    padding: 5px;
@@ -48,9 +50,11 @@ button.paypal-button.large{
 }
 
 
+
 button{
     border-radius: 10px;
     background:#99b9d9;
+    font-family:'BEBAS';
 }
 
 .login{
@@ -153,7 +157,6 @@ div.row.count{
 
 #bio{
 	font-size: 12px;
-
 }
 
 .bio{
@@ -214,7 +217,6 @@ div.row.count{
     color: #0D130D;
 }
 
-
 /*        SHOP
 ===========================
 */
@@ -231,12 +233,26 @@ div.row.count{
     margin-left: 9px;
 }
 
-.shopdropsfloat{
-
-   
+.shopdropsfloat{  
 }
 
+.checkout{
+    width: 330px;
+    font: 20px 'BEBAS';
+    color: #0D130D;
+    background-color: #99b9d9;
+}
 
+.basicback{
+    margin-top: 2px;
+}
+
+ div .Main{
+    width: 550px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #EEE8D4;
+}
 
 /*        MEDIA QUERIES
 ===========================
@@ -244,15 +260,15 @@ div.row.count{
 
 @media only screen and (max-width: 980px) {        
 .landing {
-background-size: contain;
-width: 980px;
+    background-size: contain;
+    width: 980px;
 
 }   
  }
 
  @media only screen  and (min-width: 981px) and (max-width: 1081px) {   
 .landing {
-width: 980px;        
+    width: 980px;        
         background-size: contain;
 
 }   
@@ -260,21 +276,22 @@ width: 980px;
 
  @media only screen  and (min-width: 1082px) and (max-width: 1181px) {  
 .landing {
-   width: 1082px;
-background-size: contain;
+    width: 1082px;
+    background-size: contain;
 }   
  }
 
  @media only screen  and (min-width: 1182px) and (max-width: 1281px) {  
 .landing {
-width: 1182px;
-background-size: contain;
+    width: 1182px;
+    background-size: contain;
 }   
 }
 
  @media only screen  and (min-width: 400px) and (max-width: 600px) {  
 .landing {
-width: 400px;
-background-size: contain;
+    width: 400px;
+    background-size: contain;
 }   
  }
+

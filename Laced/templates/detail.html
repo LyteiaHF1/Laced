@@ -19,14 +19,18 @@
                   <!---  <button><a href="{{ url_for('logout') }}">Logout</a></button> -->
             </nav>      
         </header>
-
-
-                <h1>Detail Page</h1>
-
                     {% for item in pagedata %}
         <div class="shop">
-            <img src='{{item[3]}}' />
-          <p>Name: {{item[1]}}</p>   <p>Price: {{item[2]}}</p>  <!--- shows the items in pagedata --><br>
+             <h3>{{item[1]}}</h3>
+            <br />
+            <center><img src='{{item[3]}}' width='300px'/> </center>
+           
+                <ul>
+                    <h4>Stats</h4>
+                    <li>Size: {{item[4]}}</li>
+                    <li>Price: {{item[2]}}</li>
+                    <li>Description: {{item[5]}}</li>
+                </ul>  <!--- shows the items in pagedata --><br>
 
         {% endfor %}
          </div>

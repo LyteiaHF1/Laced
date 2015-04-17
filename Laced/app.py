@@ -65,7 +65,7 @@ def shop():
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()
     #selects product, price and image form database
-    cur.execute('select productId, productName, price, img from store')
+    cur.execute('select productId, productName, price, Img, descript from store')
     data = cur.fetchall()
     return render_template('shop.html', pagedata = data)
 

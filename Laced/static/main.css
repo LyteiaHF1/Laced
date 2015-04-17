@@ -20,6 +20,56 @@ nav{
     font-family:'BEBAS';
 }
 
+/*         MOBILE NAV STYLE 
+===========================
+*/
+drop {
+  float: right;
+  width: 40px;
+  height: 30px;
+  background-image: url(http://allybaird.com/codePen/img/hamburger.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.drop.clicked {
+    background-image: url(http://allybaird.com/codePen/img/hamburger.svg);
+    background-repeat: no-repeat;
+}
+
+.toggle1 {
+  display:none;
+  width:20%;
+}
+
+.nav li {
+  border-bottom: 1px solid #fff;
+  list-style-type: none;
+  text-align: center;
+}
+  	
+li > a:link, li > a:visited {
+    display: block;
+    color: #fff;
+    font-family: 'BEBAS';
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: #000;
+    text-decoration: none;
+  	}
+  	
+li  > a:hover {
+      color: #000;
+      background-color: #99b9d9;
+      text-decoration: none;
+}
+
+/*       END MOBILE NAV STYLE 
+===========================
+*/
+
 body{
     background-color: #F4F3DC;/*site main bg color*/
 }

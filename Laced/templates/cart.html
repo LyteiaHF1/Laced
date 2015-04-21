@@ -17,8 +17,12 @@
                      {% for item in pagedata %}
         <div class="shop">
             <img src='{{item[3]}}'/>
-            <p>{{item[1]}}
-            Price: {{item[2]}}</p>
+             <ul>
+                <li>Size: {{item[4]}}</li>
+                <li>Price: {{item[2]}}</li>
+                <li>Description: {{item[5]}}</li>
+            </ul>
+            <p>Price Pay At Checkout: {{item[2]}}</p>
             
             
             

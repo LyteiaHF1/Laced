@@ -76,7 +76,7 @@ def shopdetail(id):
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()
     #selects product, price and image form database
-     cur.execute('select productId,productName, price, Img, size, descript from store WHERE productId =' + id )
+     cur.execute('select productId,productName, price, Img,size,descript from store WHERE productId =' + id )
     data = cur.fetchall()
     return render_template('detail.html', pagedata = data)
 

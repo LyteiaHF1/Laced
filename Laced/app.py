@@ -100,6 +100,16 @@ def trade():
     data = cur.fetchall()
     return render_template('trade.html', pagedata = data)
 
+@app.route('/trade/<id>')
+def tradedetail(id):
+      #need to associate each shop item by id, detail page gets id from clicked on link in shop then takes to item page where user can add to cart and view more images if avalibile
+    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
+    cur = db.cursor()
+    #selects product, price and image form database
+    cur.execute('select id, tradeName, size, imgUrl,descript from trade WHERE id =' + id )
+    data = cur.fetchall()
+    return render_template('tradedetail.html', pagedata = data)
+
 @app.route('/closet')
 def closet():
     return render_template('closet.html')

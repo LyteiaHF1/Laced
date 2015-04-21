@@ -80,6 +80,16 @@ def shopdetail(id):
     data = cur.fetchall()
     return render_template('detail.html', pagedata = data)
 
+@app.route('/shop/<id>/cart')
+def cart(id): 
+    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
+    cur = db.cursor()
+    #selects product, price and image form database
+    cur.execute('select productId,productName, price, Img from store WHERE productId =' + id )
+    data = cur.fetchall()
+    #have to make the session variable so when user leaves off cart page the item stays but checkout works[just one item]
+    return render_template('cart.html', pagedata = data)
+
 @app.route('/trade')
 def trade():
     #display trades

@@ -2,19 +2,38 @@
     <head>
         <title>Laced</title>
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' type='text/css' href='static/base.css'/>
-    <link rel='stylesheet' type='text/css' href='static/layout.css'/>
-    <link rel='stylesheet' type='text/css' href='static/skeleton.css'/>
-    <link rel='stylesheet' type='text/css' href='static/main.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/base.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/main.css'/>
 
     </head>
     <body>
-        <h1><img src='static/hmpg_logo1.png' width='150'/></h1>
-       <h2>Hi, {{ current_user.nickname }}!</h2>
+        <h1><img src='/static/lacedlogo_1.png' /></h1> 
+       <!---<h2>Hi, {{ current_user.nickname }}!</h2>
         <button><a href="{{ url_for('logout') }}">Logout</a></button>
-      <br/>
+      <br/> --->
       <center><h2>Cart</h2></center>
+                     {% for item in pagedata %}
+        <div class="shop">
+            <img src='{{item[3]}}'/>
+            <p>{{item[1]}}
+            Price: {{item[2]}}</p>
+            
+            
+            
+             <center><button>Checkout<a><script src="/static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+    data-button="buynow"
+    data-name="{{item[1]}}"
+    data-amount="{{item[2]}}"
+    async
+></script></a></button></center>
 
+         
+         <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
+            
+            
+             {% endfor %}
 
 
     </body>

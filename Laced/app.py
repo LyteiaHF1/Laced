@@ -46,16 +46,16 @@ def index():
     
 @app.route('/home')
 def home():
-    #dispaly  trades added to trade floor and shop items
+     #dispaly  trades added to trade floor and shop items
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()
     #selects product, price and image form database
-    cur.execute('select productId,productName, price from store')
+    cur.execute('select productId,productName, price, Img, size, descript from store')
     data = cur.fetchall()
     #grabs trades from database
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur1 = db.cursor()
-    cur1.execute('select tradeName from trade')
+    cur1.execute('select id, tradeName, descript, imgUrl from trade')
     tradedata = cur1.fetchall()
     return render_template('home.html', pagedata = data, trade = tradedata)
     

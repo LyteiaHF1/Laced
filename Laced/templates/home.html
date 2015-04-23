@@ -32,14 +32,16 @@
         {% for item in pagedata %}
       <div class='homeItems'>
           <div class='homeName'><h3>{{item[1]}}</h3></div>
-           {{item[1]}}-{{item[2]}} <button><a href="/shop/{{item[0]}}">Shop</a></button>
+            <img src='{{item[3]}}'/> <p>{{item[5]}}</p><button><a href="/shop/{{item[0]}}">Shop</a></button>
               
             </div>
              {% endfor %}
-            <!-- <h4>Trades</h4>--> <!--- temp heading just to show what db call is printing where -->
+        
+       <!-- <h4>Trades</h4>--> <!--- temp heading just to show what db call is printing where -->
         {% for item in trade %}
              <div class='homeItems'>  
-             {{item[0]}} - {{item[1]}} <button><a href="/shop/{{item[0]}}">Trade</a></button> <br/>
+                <div class='homeName'><h3>{{item[1]}}</h3></div>
+                    <img src='{{item[3]}}'/> <p>{{item[2]}}</p> <button><a href="/trade/{{item[0]}}">Trade</a></button> 
         
         </div> 
             {% endfor %} 

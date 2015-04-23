@@ -50,12 +50,12 @@ def home():
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()
     #selects product, price and image form database
-    cur.execute('select productId,productName, price, Img, size, descript from store')
+    cur.execute('select productId,productName, price, Img, size, descript,con from store WHERE con = "8/10"')
     data = cur.fetchall()
     #grabs trades from database
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur1 = db.cursor()
-    cur1.execute('select id, tradeName, descript, imgUrl from trade')
+    cur1.execute('select id, tradeName, descript, imgUrl,con from trade WHERE con = "10"')
     tradedata = cur1.fetchall()
     return render_template('home.html', pagedata = data, trade = tradedata)
     

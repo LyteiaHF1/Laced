@@ -6,9 +6,11 @@ Final Project
 html{	
 	font-weight: 300;    
 }
-body{ 
-    background-color: #F4F3DC;  
+
+body{
+    background-color: #F4F3DC;/*site main bg color*/
 }
+
 
 header{
   background-color: #EEE8D4; 
@@ -18,11 +20,6 @@ header{
 nav{
     float: right;
     font-family:'BEBAS';
-}
-
-/
-body{
-    background-color: #F4F3DC;/*site main bg color*/
 }
 
 .landing{
@@ -47,8 +44,6 @@ button.paypal-button.large{
     width: 95px;
     padding: 0;
 }
-
-
 
 button{
     border-radius: 10px;
@@ -107,12 +102,32 @@ p{
 	margin: 0 auto;
 }
 
+/*        HOME PAGE
+===========================
+*/
+
 #home{
 	background-color: #F4F3DC;
 	margin-top: 35px;
 }
 #home.scroll{
 	margin-top: 20px;
+}
+
+div .homeItems{
+    width: 350px;
+    height: 250px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: #EEE8D4;
+    
+}
+
+div .homeName h3{
+    width: 350px;
+    background-color: white;
+    border-bottom: 1px solid black;
 }
 
 

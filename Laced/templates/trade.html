@@ -17,14 +17,12 @@
                 <a href='/closet'>Closet</a>
             </nav>
         </header>
-        
-        <h1>Trade page</h1>
-        <!--- Adding Trade Images Here -->
-        
-           {% for item in pagedata %}
-           <a href='#'> {{item[1]}}  {{item[2]}} {{item[3]}} </a>
-
-        {% endfor %}
+                
+        {% for item in pagedata %}
+        <ul class="photo-grid">
+					<li><a href="/trade/{{item[0]}}"><img src='{{item[4]}}'/></a></li>
+         {% endfor %}
+        </div>
 
 
     </body>

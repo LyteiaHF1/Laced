@@ -134,7 +134,6 @@ div .homeName h3{
 /*         PROFILE
 ===========================
 */
-
 .closet_profile{
 	color: #555555;
 }
@@ -148,10 +147,15 @@ div .homeName h3{
 }
 .profile_pic{
 	margin-top: -15px;
-    margin-left: -54px;
+    margin-left: -20px;
 }
 .profile_name{
 	background-color: #F4F3DC;
+   
+}
+
+.username{
+     margin-left: 20px;
 }
 
 .btm_shadow{
@@ -163,11 +167,11 @@ div .homeName h3{
 .right_border{
 	border-right: 1px solid black;
 }
+
 div.row.count{
 	padding-bottom: 25px;
 }
 
-}
 
 #bio{
 	font-size: 12px;
@@ -175,11 +179,11 @@ div.row.count{
 
 .bio{
   margin-top: -80px;
-  margin-left: 5px;
+  margin-left: 20px;
 }
 
 .trades{
-    margin-top: -248px;
+    margin-top: -192px;
     margin-left: -45px;
     float: right;
     width: 230px;
@@ -189,8 +193,8 @@ div.row.count{
 }
 
 .statsA{
-   margin-top: -265px;
-   margin-right: 189px;
+   margin-top: -199px;
+   margin-right: 199px;
    margin-left: -10px;
    float: right; 
    font: 20px 'BEBAS';
@@ -198,16 +202,16 @@ div.row.count{
 }
 
 .statsS{
-   margin-top: -265px;
-   margin-right: 80px;
+   margin-top: -199px;
+   margin-right: 90px;
    float: right;
    font: 20px 'BEBAS';
    color: #0D130D;
 }
 
 .stats1{
-    margin-top: -239px;
-    margin-left: -45px;
+    margin-top: -177px;
+    margin-left: -65px;
     float: right;
     width: 230px;
     font: 20px 'BEBAS';
@@ -215,7 +219,7 @@ div.row.count{
 }
 
 .stats2{
-    margin-top: -238px;
+    margin-top: -178px;
     margin-right: -105px;
     float: right;
     width: 230px;
@@ -225,7 +229,7 @@ div.row.count{
 
 .editProfile{
     margin-top: -50px;
-    margin-left: 2px;
+    margin-left: 20px;
     width: 100px;
     font: 12px 'BEBAS';
     color: #0D130D;

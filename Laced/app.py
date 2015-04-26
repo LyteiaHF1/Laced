@@ -88,6 +88,16 @@ def cart(id):
     cur.execute('select productId,productName, price, Img from store WHERE productId =' + id )
     data = cur.fetchall()
     #have to make the session variable so when user leaves off cart page the item stays but checkout works[just one item]
+    id = str(id)
+    
+    if 'cart' in session:
+        if id in session['cart']:
+            session['cart'][id] += 1
+        else:
+            session['cart'][id] = 1
+    else:
+        session['cart'] = {id:1}
+    
     return render_template('cart.html', pagedata = data)
 
 @app.route('/trade')

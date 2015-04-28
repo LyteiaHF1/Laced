@@ -14,15 +14,18 @@
         
         <p>Laced is all about Trading in a safe way! Make sure to add size, condition and a brief description along with a good image the better the image, and description the better chance of someone making a offer on the item</p>
 
-        <form class="pure-form pure-form-aligned"  method="POST" action="static/upload.php" enctype="multipart/form-data">
-        <label>Item Name:</label> <input required="required" /><br/>
-        <label>Condition:</label> <input required="required" /><br/>
-        <label>Size:</label> <input required="required" /><br/>
-        <label>Description:</label> <input /><br/>
-		<label>Trade:</label> <input type="file" name="userfile" required="required" /><br/><br/>
-
-        <button>Upload</button>
-	</form>
+            <form action="/upload" method=post enctype=multipart/form-data>
+        <p>
+            <input type=file name=file><br />
+            <p>Add a Label:</p>
+            <input type=text name=label value='{{ request.form.label }}'><br />
+            <input name='size' value='{{ request.form.size }}' required="required" /><br/>
+            <input name='con' value='{{ request.form.con }}' required="required" /><br/>
+            <input name='descript' value='{{ request.form.descript }}' /><br/>
+            <input type=submit value=Upload>
+        </p>
+        </form>
+        
  <button class='trades'><a href="{{ url_for('closet') }}">back to closet</a></button>
     </body>
 </html>

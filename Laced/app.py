@@ -19,6 +19,25 @@ app.config['OAUTH_CREDENTIALS'] = {
     }
 }
 
+# This is the path to the upload directory
+app.config['UPLOAD_FOLDER'] = 'static/uploads/'
+# These are the extension that we are accepting to be uploaded
+app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
+
+# For a given file, return whether it's an allowed type or not
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
+
+
+# Insert filename into database 
+def add_pic(filename, label, size, con, descript):
+    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
+    cur = db.cursor()
+    cur.execute("insert into trade (imgUrl,tradeName,size,con,descript) values (%s,%s,%s,%s,%s)", (filename,label,size,con,descript)) #values is how many columns in database
+    db.commit()
+
+
 db = SQLAlchemy(app)
 lm = LoginManager(app)
 lm.login_view = 'index'
@@ -89,9 +108,9 @@ def cart(id):
     data = cur.fetchall()
     #have to make the session variable so when user leaves off cart page the item stays but checkout works[just one item] 
 
-def update(id):
-    if id == id:
-        print 'item is here now'
+#def update(id):
+    #if id == id:
+        #print 'item is here now'
     
     return render_template('cart.html', pagedata = data)
 
@@ -124,25 +143,24 @@ def tradeupload():
         return render_template('tradeuplaodform.html')
 
     
-# Route that will process the file upload
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload():
-    # Get the name of the uploaded file
-    file = request.files['file']
-    # Check if the file is one of the allowed types/extensions
-    if file and allowed_file(file.filename):
-        # Make the filename safe, remove unsupported chars
+    if request.method == 'POST':
+        file = request.files['file']
+        label = request.form['label']
+        size = request.form['size']
+        con = request.form['con']
+        descript = request.form['descript']
+    if file:
         filename = secure_filename(file.filename)
-        # Move the file form the temporal folder to
-        # the upload folder we setup
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('trade'))
+        add_pic(filename, label, size, con, descript)
+        return redirect(url_for('trade', filename=filename))
 
-# This route is expecting a parameter containing the name
+
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+    return send_from_directory(app.config['UPLOAD_FOLDER'], secure_filename(filename))
     
 @app.route('/logout')
 def logout():

@@ -16,3 +16,10 @@ class Shoe(object):
 
     def __repr__(self):
         return "<Shoe: %s, %s, %s>"%(self.productId, self.productName, self.price_str())
+    
+    
+    def db_connect():
+    """Return a database cursor."""
+    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
+    cur = db.cursor()
+    return cur

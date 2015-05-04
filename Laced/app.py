@@ -116,6 +116,8 @@ def cart(id):
 
 @app.route('/trade')
 def trade():
+    filename = request.args.get('filename', '')
+    t = (filename,)
     #display trades
     db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
     cur = db.cursor()

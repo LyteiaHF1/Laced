@@ -7,7 +7,7 @@ import mysql.connector
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///laced.db'
 app.config['OAUTH_CREDENTIALS'] = {
     'facebook': {
         'id': '903491159707098',
@@ -78,41 +78,60 @@ def home():
     tradedata = cur1.fetchall()
     return render_template('home.html', pagedata = data, trade = tradedata)
     
+
 @app.route('/store')
 def shop():
-#display fruits
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    #selects product, price and image form database
-    cur.execute('select productId, productName, price, Img, descript from store')
-    data = cur.fetchall()
-    return render_template('shop.html', pagedata = data)
+    shoes = model.Shoe.get_all()
+    return render_template("shop.html",shoe_list=shoes)
 
 
-@app.route('/shop/<id>')
-def shopdetail(id):
-    #need to associate each shop item by id, detail page gets id from clicked on link in shop then takes to item page where user can add to cart and view more images if avalibile
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    #selects product, price and image form database
-     cur.execute('select productId,productName, price, Img,size,descript from store WHERE productId =' + id )
-    data = cur.fetchall()
-    return render_template('detail.html', pagedata = data)
-
-@app.route('/shop/<id>/cart')
-def cart(id): 
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    #selects product, price and image form database
-    cur.execute('select productId,productName, price, Img from store WHERE productId =' + id )
-    data = cur.fetchall()
-    #have to make the session variable so when user leaves off cart page the item stays but checkout works[just one item] 
-
-#def update(id):
-    #if id == id:
-        #print 'item is here now'
     
-    return render_template('cart.html', pagedata = data)
+@app.route("/store/<int:id>")
+def shopdetail(id):
+    shoe = model.Shoe.get_by_id(id) 
+    return render_template('detail.html', display_shoe=shoe)
+ 
+    
+
+@app.route("/cart")
+def shopping_cart():
+    """Display content of shopping cart."""
+
+    # TODO: Display the contents of the shopping cart.
+    #   - The cart is a list in session containing shoes added
+
+    cart_dict = {}
+    if not session:                                 # if nothing has been added to cart yet
+        shoe_info = []
+        return render_template('cart.html', shoe_info=shoe_info)
+
+    for id in session['cart']:
+        cart_dict[id] = cart_dict.setdefault(id, 0) + 1
+
+    shoe_info = []
+    for id in cart_dict.keys():
+        shoe = model.Shoe.get_by_id(id)
+        name = shoe.common_name
+        price = shoe.price
+        img = shoe.imgurl
+        num = cart_dict[id]
+        shoe_info.append((name, num, price,img))
+
+    return render_template("cart.html", shoe_info=shoe_info)
+
+
+@app.route("/add_to_cart/<int:id>")
+def add_to_cart(id):
+    """Add a Shoe to cart and redirect to shopping cart page.
+
+    When a shoe is added to the cart, redirect browser to the shopping cart
+    page and display a confirmation message: 'Successfully added to cart'.
+    """
+    if 'cart' not in session:
+        session['cart'] = []
+    session['cart'].append(id)
+    return redirect('/cart')
+    
 
 @app.route('/trade')
 def trade():

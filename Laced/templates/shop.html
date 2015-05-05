@@ -19,10 +19,6 @@
                    <!--- <button><a href="{{ url_for('logout') }}">Logout</a></button>-->
             </nav>
         </header>
-
-     <fieldset>
-
-
         <!---{{session["loggedin"]}} -->
 
         <!--- var dumbs
@@ -39,24 +35,19 @@
             <option value="price">Price</option>
         </select>
         <img id='shopicon' src='static/cart_icon.png' />
+   <a href="#"><img id='shopicon' src='static/cart_icon.png' /></a> 
 
-         {% for item in pagedata %}
+         {% for shoe in shoe_list %}
          <div class="shop">
-                   <div class='Main'>
-           <a href="/shop/{{item[0]}}"> {{item[1]}} <br/><img src='{{item[3]}}' /> <!--{{item[2]}} {{item[5]}}--></a> <!--<a><script src="static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
-    data-button="buynow"
-    data-name="{{item[1]}}"
-    data-amount="{{item[2]}}"
-    async
-></script></a>-->
+            <div class='Main'>
+                <h3><a href="/store/{{ shoe.id }}">{{ shoe.common_name }}</a></h3>
+                  <a href="/store/{{ shoe.id }}">
+                      <img src="{{ shoe.imgurl }}" >
+                  </a>
+      
              </div>
-
-             <!--<a href=/cart type="submit" value="add"> Add to cart</a> -->
-             <!--- shows the items in pagedata -->
-
         {% endfor %}
          </div>
-    </fieldset>
     </body>
 </html>
 

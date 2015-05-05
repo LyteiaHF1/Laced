@@ -10,34 +10,26 @@
     </head>
     <body>
         <h1><img src='/static/lacedlogo_1.png' /></h1> 
-       <!---<h2>Hi, {{ current_user.nickname }}!</h2>
-        <button><a href="{{ url_for('logout') }}">Logout</a></button>
-      <br/> --->
       <center><h2>Cart</h2></center>
-                     {% for item in pagedata %}
         <div class="shop">
-            <img src='{{item[3]}}'/>
-             <ul>
-                <li>Size: {{item[4]}}</li>
-                <li>Price: {{item[2]}}</li>
-                <li>Description: {{item[5]}}</li>
-            </ul>
-            <p>Price Pay At Checkout: {{item[2]}}</p>
+            {% for shoe in shoe_info %}
+            <!-- prints out the id on page replace id with image -->
+            <img src='{{shoe[3]}}' />
+        <ul>
+            <li>{{ shoe[0] }}</li><!--id -->
+            <li>{{ shoe[1] }}</li><!--name -->
+            <li>${{ shoe[2] }}</li><!--price -->
+            <li>${{ shoe[1] * shoe[2] }}</li>
             
-            
-            
-             <center><button>Checkout<a><script src="/static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+        </ul>
+             {% endfor %}
+            <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
+                 <center><button>Checkout<a><script src="/static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"
-    data-name="{{item[1]}}"
-    data-amount="{{item[2]}}"
+    data-name=""
+    data-amount=""
     async
 ></script></a></button></center>
-
-         
-         <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
-            
-            
-             {% endfor %}
 
 
     </body>

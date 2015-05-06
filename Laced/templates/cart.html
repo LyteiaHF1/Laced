@@ -2,14 +2,13 @@
     <head>
         <title>Laced</title>
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' type='text/css' href='/static/base.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/layout.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/skeleton.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/main.css'/>
-
+    <link rel='stylesheet' type='text/css' href='/static/css/base.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/css/layout.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/css/skeleton.css'/>
+    <link rel='stylesheet' type='text/css' href='/static/css/main.css'/>
     </head>
     <body>
-        <h1><img src='/static/lacedlogo_1.png' /></h1> 
+         <h1><img src='/static/images/lacedlogo_1.png' /></h1> 
       <center><h2>Cart</h2></center>
         <div class="shop">
             {% for shoe in shoe_info %}
@@ -24,7 +23,7 @@
         </ul>
              {% endfor %}
             <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
-                 <center><button>Checkout<a><script src="/static/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+                 <center><button>Checkout<a><script src="/static/js/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"
     data-name=""
     data-amount=""

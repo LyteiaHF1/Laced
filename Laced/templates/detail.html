@@ -26,21 +26,25 @@
                     {% for item in pagedata %}
         <div id='content' class='shop'>
         <div class="menu-trigger"></div>
-             <h3>{{item[1]}}</h3>
+            <h3>{{ display_shoe.common_name }}</h3>
+             <img src="{{ display_shoe.imgurl }}" class="img-responsive">
             <br />
-            <center><img src='{{item[3]}}' width='300px'/> </center>
-           
                 <ul>
-                    <h4>Stats</h4>
-                    <li>Size: {{item[4]}}</li>
-                    <li>Price: {{item[2]}}</li>
-                    <li>Description: {{item[5]}}</li>
-                <button><a href="http://twitter.com/share">Tweet</a></button>
-                </ul>  <!--- shows the items in pagedata --><br>
-
-        {% endfor %}
-         </div>
-               <button><a href="{{ url_for('shop') }}">back</a></button>  <button>Add To Cart</button>
+                    <h4>Laced Stats</h4>
+                    <li>Shoe type: {{ display_shoe.shoe_type }}</li>
+                    <li>Size: {{ display_shoe.size }}</li>
+                    <li>Condition: {{ display_shoe.con }}</li>
+                    <li>Price: {{ display_shoe.price_str() }}</li>
+                  
+                    
+                    <button><a href="http://twitter.com/share">Tweet</a></button>
+                </ul>
+            
+        
+                <!--- shows the items in pagedata --><br> 
+                 
+         <center><button><a class='basicback' href="{{ url_for('shop') }}">back</a></button></center>  
+        <center><button><a class="checkout" href="/add_to_cart/{{ display_shoe.id }}">Add To Cart </a></button></center>
     <script src="/static/js/main1.js"></script>
     </body>
 </html>

@@ -10,24 +10,25 @@
     </head>
     <body> 
       <header>
-            <h1><img src='static/images/lacedlogo_1.png' /></h1> 
-            <nav>
-                <a href='/home'>Home</a>
-                <a href='/store'>Shop</a>
-                <a href='/trades'>Trade</a>
-                <a href='/closet'>Closet</a>
-                  <!---  <button><a href="{{ url_for('logout') }}">Logout</a></button>-->
-            </nav>
+            <nav id="slide-menu">
+              <br/>
+                <h1><img src='static/images/lacedlogo_1.png'/></h1>
+	       <ul>
+                <li class="timeline"><a href="/home">Home</li></a>
+                <li class="events"><a href="/store">Shop</li></a>
+                <li class="calendar"><a href="/trade">Trade</li></a>
+                <li class="sep settings"><a href="/closet">Closet</li></a>
+		      <li class="logout"><a href="{{ url_for('logout') }}">Logout</li></a>
+	       </ul>
+        </nav>
         </header>
 
-     <fieldset>
         <!--- var dumbs
         {{ pagedata }} -->
          <br />
-         <br />
-
     
-         <div class="home">
+        <div id='content' class='home'>
+            <div class="menu-trigger"></div>
             <!-- <h4>Shop</h4>--> <!--- temp heading just to show what db call is printing where -->
         {% for item in pagedata %}
       <div class='homeItems'>
@@ -46,7 +47,8 @@
         </div> 
             {% endfor %} 
          </div>
-    </fieldset>
+        <script src="/static/js/main1.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </body>
 </html>
 

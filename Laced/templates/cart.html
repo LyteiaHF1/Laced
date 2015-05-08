@@ -8,9 +8,22 @@
     <link rel='stylesheet' type='text/css' href='/static/css/main.css'/>
     </head>
     <body>
-         <h1><img src='/static/images/lacedlogo_1.png' /></h1> 
-      <center><h2>Cart</h2></center>
-        <div class="shop">
+         <header>
+        <nav id="slide-menu">
+              <br/>
+           <h1><img src='static/images/lacedlogo_1.png'/></h1>
+	       <ul>
+                <li class="timeline"><a href="/home">Home</li></a>
+                <li class="events"><a href="/store">Shop</li></a>
+                <li class="calendar"><a href="/trade">Trade</li></a>
+                <li class="sep settings"><a href="/closet">Closet</li></a>
+		          <li class="logout"><a href="{{ url_for('logout') }}">Logout</li></a>
+	       </ul>
+        </nav>
+        </header>
+        <div id='content' class='shop'>
+        <div class="menu-trigger"></div>
+            <center><h2>Cart</h2></center>
             {% for shoe in shoe_info %}
             <!-- prints out the id on page replace id with image -->
             <img src='{{shoe[3]}}' />
@@ -30,7 +43,8 @@
     async
 ></script></a></button></center>
 
-
+</div>
+<script src="/static/js/main1.js"></script>
     </body>
 </html>
 

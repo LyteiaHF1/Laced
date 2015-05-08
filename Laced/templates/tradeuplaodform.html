@@ -9,8 +9,20 @@
     </head>
     <body> 
        <header>
-            <h1><img src='static/images/lacedlogo_1.png' /></h1>
-        </header>
+         <nav id="slide-menu">
+              <br/>
+            <h1><img src='static/images/lacedlogo_1.png'/></h1>
+	       <ul>
+                <li class="timeline"><a href="/home">Home</li></a>
+                <li class="events"><a href="/store">Shop</li></a>
+                <li class="calendar"><a href="/trade">Trade</li></a>
+                <li class="sep settings"><a href="/closet">Closet</li></a>
+		        <li class="logout"><a href="{{ url_for('logout') }}">Logout</li></a>
+	       </ul>
+        </nav>
+    </header>
+    <div id='content'>
+        <div class="menu-trigger"></div>
         
         <p>Laced is all about Trading in a safe way! Make sure to add size, condition and a brief description along with a good image the better the image, and description the better chance of someone making a offer on the item</p>
 
@@ -27,6 +39,7 @@
         </form>
         
  <button class='trades'><a href="{{ url_for('closet') }}">back to closet</a></button>
+<script src="/static/js/main1.js"></script>
     </body>
 </html>
 

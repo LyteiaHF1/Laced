@@ -28,6 +28,46 @@ class Shoe(object):
         return "<Shoe: %s, %s, %s>" % (
             self.id, self.common_name, self.price_str())
 
+    
+    
+    @classmethod
+    def get_all_home(cls, max=5):
+        """Return list of shoes.
+
+        Query the database for the first [max] shoes, returning each as a
+        shoe object
+        """
+
+        cursor = db_connect()
+        QUERY = """
+                  SELECT id,
+                         shoe_type,
+                         common_name,
+                         price,
+                         imgurl,
+                         size,
+                         con
+                   FROM store
+                   WHERE size = '7'
+                   LIMIT ?;
+               """
+
+        cursor.execute(QUERY, (max,))
+        store_rows = cursor.fetchall()
+        
+        # list comprehension to build a list of Shoe objects by going through
+        # the database records and making a shoe for each row. This is done
+        # by unpacking in the for-loop.
+
+        shoes = [Shoe(*row) for row in store_rows]
+
+        print shoes
+        #print "new shit addded"
+
+        return shoes
+    
+    
+    
     @classmethod
     def get_all(cls, max=55):
         """Return list of shoes.
@@ -66,7 +106,7 @@ class Shoe(object):
 
     @classmethod
     def get_by_id(cls, id):
-        """Query for a specific melon in the database by the primary key"""
+        """Query for a specific shoe in the database by the primary key"""
 
         cursor = db_connect()
         QUERY = """

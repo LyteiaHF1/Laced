@@ -65,18 +65,9 @@ def index():
     
 @app.route('/home')
 def home():
-     #dispaly  trades added to trade floor and shop items
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    #selects product, price and image form database
-    cur.execute('select productId,productName, price, Img, size, descript,con from store WHERE con = "8/10"')
-    data = cur.fetchall()
-    #grabs trades from database
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur1 = db.cursor()
-    cur1.execute('select id, tradeName, descript, imgUrl,con from trade WHERE con = "10"')
-    tradedata = cur1.fetchall()
-    return render_template('home.html', pagedata = data, trade = tradedata)
+    #query to db is done in model so all thats needed is call the function to grab it and render it on page
+    shoes = model.Shoe.get_all_home()
+    return render_template("home.html",shoe_list=shoes)
     
 
 @app.route('/store')

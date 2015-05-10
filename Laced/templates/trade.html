@@ -23,9 +23,9 @@
      </header>
     <div id='content'>
                 
-        {% for item in pagedata %}
+        {% for trade in trade_list %}
         <ul class="photo-grid">
-					<li><a href="/trade/{{item[0]}}"><img src='{{item[4]}}'/></a></li>
+					<li><a href="/trade/{{ trade.id }}"><img src='{{ trade.imgurl }}'/></a></li>
          {% endfor %}
         </div>
         <script src="/static/js/main1.js"></script>

@@ -67,7 +67,8 @@ def index():
 def home():
     #query to db is done in model so all thats needed is call the function to grab it and render it on page
     shoes = model.Shoe.get_all_home()
-    return render_template("home.html",shoe_list=shoes)
+    trades = model.Trade.get_all_hometrades()
+    return render_template("home.html",shoe_list=shoes, trade_list=trades)
     
 
 @app.route('/store')
@@ -128,23 +129,15 @@ def add_to_cart(id):
 def trade():
     filename = request.args.get('filename', '')
     t = (filename,)
-    #display trades
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    #selects product, price and image form database
-    cur.execute('select id, tradeName, size, con from trade')
-    data = cur.fetchall()
-    return render_template('trade.html', pagedata = data)
+    trades = model.Trade.get_all_trades()
+    return render_template("trade.html",trade_list=trades, filename = filename)
+    
 
 @app.route('/trade/<id>')
 def tradedetail(id):
       #need to associate each shop item by id, detail page gets id from clicked on link in shop then takes to item page where user can add to cart and view more images if avalibile
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    #selects product, price and image form database
-    cur.execute('select id, tradeName, size, imgUrl,descript from trade WHERE id =' + id )
-    data = cur.fetchall()
-    return render_template('tradedetail.html', pagedata = data)
+    trade = model.Trade.get_by_id(id) 
+    return render_template('tradedetail.html', display_trade=trade)
 
 @app.route('/closet')
 def closet():

@@ -29,13 +29,20 @@
         <div id='content' class='home'>
         <div class="menu-trigger"></div>
      {% for shoe in shoe_list %}
-         <!-- <h4>Shop</h4>--> <!--- temp heading just to show what db call is printing where -->
       <div class='homeItems'>
           <div class='homeName'><h3>{{ shoe.common_name }}</h3></div>
             <img src='{{ shoe.imgurl }}'/><button><a href="/store/{{ shoe.id }}">Shop</a></button>
               
             </div>
              {% endfor %}
+            {% for trade in trade_list %}  
+      <div class='homeItems'>
+          <div class='homeName'><h3>{{ trade.tradeName }}</h3></div>
+            <img src='{{ trade.imgurl }}'/><p>condition: {{ trade.con}}</p><button><a href="/trade/{{ trade.id }}">Trade</a></button>
+              
+            </div>
+             {% endfor %}
+            
          </div>
         <script src="/static/js/main1.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>

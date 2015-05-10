@@ -25,17 +25,19 @@
                     {% for item in pagedata %}
        <div id='content' class='shop'>
         <div class="menu-trigger"></div>
-            <h3>{{item[1]}}</h3>
+             <h3>{{ display_trade.tradeName }}</h3>
+             <img src="{{ display_trade.imgurl }}" width='400px' class="img-responsive">
             <br />
-            <center><img src='{{item[3]}}' width='300px'/> </center>
                 <ul>
-                    <li>Size: {{item[2]}}</li>
-                    <li>Description: {{item[4]}}</li>
+                    <li>Size: {{ display_trade.size }}</li>
+                    <li>Condition: {{ display_trade.con }}</li>
+                  
+                    
                     <button><a href="http://twitter.com/share">Tweet</a></button>
-                </ul>
+                </ul> 
             
             
-                <!--- shows the items in pagedata --><br> 
+                <br> 
          
        
         <center><button class='checkout'><a href="{{ url_for('tradeupload') }}">Offer</a></button> </center>

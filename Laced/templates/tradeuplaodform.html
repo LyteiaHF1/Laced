@@ -29,11 +29,10 @@
             <form action="/upload" method=post enctype=multipart/form-data>
         <p>
             <input type=file name=file><br />
-            <p>Add a Label:</p>
-            <input type=text name=label value='{{ request.form.label }}'><br />
-            <input name='size' value='{{ request.form.size }}' required="required" /><br/>
-            <input name='con' value='{{ request.form.con }}' required="required" /><br/>
-            <input name='descript' value='{{ request.form.descript }}' /><br/>
+            <input type=text name=label placeholder="Name" value='{{ request.form.label }}'><br />
+            <input name='size' placeholder="Size"value='{{ request.form.size }}' required="required" /><br/>
+            <input name='con' placeholder="Condition" value='{{ request.form.con }}' required="required" /><br/>
+            <input name='descript' placeholder="Descripiton" value='{{ request.form.descript }}' /><br/>
             <input type=submit value=Upload>
         </p>
         </form>

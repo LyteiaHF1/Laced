@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, session
+from flask import Flask, redirect, url_for, render_template, session,flash
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager, UserMixin, login_user, logout_user,\
     current_user
@@ -130,7 +130,15 @@ def add_to_cart(id):
 @app.route('/clearcart')
 def clear_cart():
     session['cart'] = {}
-    return redirect("/cart")    
+    return redirect("/cart") 
+
+@app.route("/checkout")
+def checkout():
+    """Temporary Checkout redirect til fix paypal header issue."""
+
+    flash("Sorry! Cant Checkout at This Tim.")
+    return redirect("/store")
+
 
 @app.route('/trade')
 def trade():

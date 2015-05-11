@@ -38,6 +38,7 @@
              {% endfor %}
             <a href="/clearcart" class="btn btn-large btn-default">Clear Cart</a>
             <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
+            <center><button class='checkout'><a href="/checkout">Checkout</a></button></center>
             <center><a  href="{{ url_for('paypal_redirect')}} "><img src="https://www.paypalobjects.com/en_US/i/btn/btn_xpressCheckout.gif"></center>
                <!--  <center><button>Checkout<a><script src="/static/js/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"

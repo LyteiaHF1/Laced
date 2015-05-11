@@ -97,7 +97,7 @@ def shopping_cart():
     # TODO: Display the contents of the shopping cart.
     #   - The cart is a list in session containing shoes added
 
-    cart_dict = []
+    cart_dict = {}
     if not session:                                 # if nothing has been added to cart yet
         shoe_info = []
         return render_template('cart.html', shoe_info=shoe_info)

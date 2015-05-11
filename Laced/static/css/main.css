@@ -96,13 +96,13 @@ nav#slide-menu > ul li.sep {
   border-top: 1px solid #F4F3DC;
 }
 nav#slide-menu > ul li.timeline:before {
-  content: '\e805';
+  content: '\';
 }
 nav#slide-menu > ul li.events:before {
-  content: '\e802';
+  content: '\';
 }
 nav#slide-menu > ul li.calendar:before {
-  content: '\e800';
+  content: '\';
 }
 nav#slide-menu > ul li.settings:before {
   content: '\e803';

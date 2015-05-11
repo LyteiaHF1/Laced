@@ -97,7 +97,7 @@ def shopping_cart():
     # TODO: Display the contents of the shopping cart.
     #   - The cart is a list in session containing shoes added
 
-    cart_dict = {}
+    cart_dict = []
     if not session:                                 # if nothing has been added to cart yet
         shoe_info = []
         return render_template('cart.html', shoe_info=shoe_info)
@@ -133,7 +133,7 @@ def add_to_cart(id):
 #DO NOT USE NOT WORKING PROPERLY ONCE CART IS CLEAR THE SEEION DOSENT RESTART SO NOTHING CAN BE ADDED TO CART    
 @app.route('/clearcart')
 def clear_cart():
-    session['cart'] = {}
+    session['cart'] = []
     return redirect("/cart") 
 
 @app.route("/checkout")

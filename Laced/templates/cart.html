@@ -34,7 +34,9 @@
             <li>${{ shoe[1] * shoe[2] }}</li>
             
         </ul>
+            
              {% endfor %}
+            <a href="/clearcart" class="btn btn-large btn-default">Clear Cart</a>
             <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
                  <center><button>Checkout<a><script src="/static/js/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"

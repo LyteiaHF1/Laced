@@ -126,6 +126,12 @@ def add_to_cart(id):
     return redirect('/cart')
     
 
+#DO NOT USE NOT WORKING PROPERLY ONCE CART IS CLEAR THE SEEION DOSENT RESTART SO NOTHING CAN BE ADDED TO CART    
+@app.route('/clearcart')
+def clear_cart():
+    session['cart'] = {}
+    return redirect("/cart")    
+
 @app.route('/trade')
 def trade():
     filename = request.args.get('filename', '')

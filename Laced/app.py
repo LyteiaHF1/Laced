@@ -3,7 +3,11 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager, UserMixin, login_user, logout_user,\
     current_user
 from oauth import OAuthSignIn
+from werkzeug import secure_filename
+from config import config, interface
 import mysql.connector
+import os
+import model
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'

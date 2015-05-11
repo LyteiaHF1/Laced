@@ -38,12 +38,13 @@
              {% endfor %}
             <a href="/clearcart" class="btn btn-large btn-default">Clear Cart</a>
             <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
-                 <center><button>Checkout<a><script src="/static/js/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
+            <center><a  href="{{ url_for('paypal_redirect')}} "><img src="https://www.paypalobjects.com/en_US/i/btn/btn_xpressCheckout.gif"></center>
+               <!--  <center><button>Checkout<a><script src="/static/js/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
     data-button="buynow"
     data-name=""
     data-amount=""
     async
-></script></a></button></center>
+></script></a></button></center> -->
 
 </div>
 <script src="/static/js/main1.js"></script>

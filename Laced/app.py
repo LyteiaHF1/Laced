@@ -8,10 +8,11 @@ from config import config, interface
 import mysql.connector
 import os
 import model
-
+from sqlalchemy import *
+db = create_engine('sqlite:///laced.db')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///laced.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///laced.db'
 app.config['OAUTH_CREDENTIALS'] = {
     'facebook': {
         'id': '903491159707098',

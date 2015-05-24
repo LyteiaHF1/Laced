@@ -74,6 +74,9 @@ nav#slide-menu > ul li {
 nav#slide-menu > ul li:hover {
   color: #99b9d9;
 }
+.fa {
+  color: #F4F3DC;
+}
 nav#slide-menu > ul li:before {
   font-family: "ico";
   font-style: normal;
@@ -96,19 +99,19 @@ nav#slide-menu > ul li.sep {
   border-top: 1px solid #F4F3DC;
 }
 nav#slide-menu > ul li.timeline:before {
-  content: '\e805';
+  content: '\';
 }
 nav#slide-menu > ul li.events:before {
-  content: '\e802';
+  content: '\';
 }
 nav#slide-menu > ul li.calendar:before {
-  content: '\e800';
+  content: '\';
 }
 nav#slide-menu > ul li.settings:before {
-  content: '\e803';
+  content: '\';
 }
 nav#slide-menu > ul li.logout:before {
-  content: '\e804';
+  content: '\';
 }
 
 nav{

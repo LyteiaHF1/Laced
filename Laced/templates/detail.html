@@ -2,23 +2,24 @@
     <head>
         <title>Laced</title>
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/base.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/css/layout.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/css/skeleton.css'/>
-    <link rel='stylesheet' type='text/css' href='/static/css/main.css'/>
+        <link rel='stylesheet' type='text/css' href='/static/css/base.css'/>
+        <link rel='stylesheet' type='text/css' href='/static/css/layout.css'/>
+        <link rel='stylesheet' type='text/css' href='/static/css/skeleton.css'/>
+        <link rel='stylesheet' type='text/css' href='/static/css/main.css'/>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
    
     </head>
     <body> 
       <header>
         <nav id="slide-menu">
-            <br/>
             <h1><img src='/static/images/lacedlogo_slidemenu.png'/></h1>
 	       <ul>
-                <li class="timeline"><a href="/home">Home</li></a>
-                <li class="events"><a href="/store">Shop</li></a>
-                <li class="calendar"><a href="/trade">Trade</li></a>
-                <li class="sep settings"><a href="/closet">Closet</li></a>
-		        <li class="logout"><a href="{{ url_for('logout') }}">Logout</li></a>
+                <li class="timeline"><i class="fa fa-home fa-fw"></i>&nbsp;<a  href="/home">Home</li></a>  
+                <li class="events"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp;<a href="/store">Shop</li></a>
+                <li class="calender"><i class="fa fa-exchange fa-fw"></i>&nbsp;<a  href="/trade">Trade</li></a>
+                <li class="line"></li>
+                <li class="sep settings"><i class="fa fa-cog fa-fw"></i>&nbsp;<a  href="/closet">Closet</li></a>
+                <li class="logout"><i class="fa fa-sign-out fa-fw"></i>&nbsp;<a  href="{{ url_for('logout') }}">Logout</li></a>
 	       </ul>
         </nav>      
         </header>

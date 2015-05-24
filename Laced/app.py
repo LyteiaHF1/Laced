@@ -37,10 +37,10 @@ def allowed_file(filename):
 
 # Insert filename into database 
 def add_pic(filename, label, size, con, descript):
-    db = mysql.connector.connect(user='root', password='root', host='127.0.0.1', port='8889', database='Laced')
-    cur = db.cursor()
-    cur.execute("insert into trade (imgUrl,tradeName,size,con,descript) values (%s,%s,%s,%s,%s)", (filename,label,size,con,descript)) #values is how many columns in database
-    db.commit()
+    conn = sqlite3.connect("laced.db")
+    cursor = conn.cursor()
+    cursor.execute("insert into trade (imgUrl,tradeName,size,con,descript) values (?,?,?,?,?)", (filename,label,size,con,descript)) #values is how many columns in database
+    conn.commit()
 
 
 db = SQLAlchemy(app)
@@ -192,6 +192,14 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+#error handling
+@app.errorhandler(404)
+def notfound(e):
+    return redirect('/home')
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return redirect('/closet')
 
 @app.route('/authorize/<provider>')
 def oauth_authorize(provider):

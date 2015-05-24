@@ -32,7 +32,7 @@
             <input type=text name=label placeholder="Name" value='{{ request.form.label }}'><br />
             <input name='size' placeholder="Size"value='{{ request.form.size }}' required="required" /><br/>
             <input name='con' placeholder="Condition" value='{{ request.form.con }}' required="required" /><br/>
-            <input name='descript' placeholder="Descripiton" value='{{ request.form.descript }}' /><br/>
+            <textarea name='descript' placeholder="Descripiton" value='{{ request.form.descript }}' ></textarea><br/>
             <input type=submit value=Upload>
         </p>
         </form>

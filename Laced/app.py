@@ -94,28 +94,21 @@ def shopdetail(id):
 @app.route("/cart")
 def shopping_cart():
     """Display content of shopping cart."""
-
     # TODO: Display the contents of the shopping cart.
     #   - The cart is a list in session containing shoes added
+    total_cost = 0
+    shoe_dictionary = {}
+    if 'cart' in session:
+        cart_list = session['cart']
+        for item in cart_list:
+            shoe= model.Shoe.get_by_id(item)
+            total_cost += shoe.price
+            if shoe.id in shoe_dictionary:
+                shoe_dictionary[shoe.id]["Quantity"] += 1
+            else:
+                shoe_dictionary[shoe.id] = {"Name": shoe.common_name,"Quantity":  1, "Price": shoe.price, 'Img': shoe.imgurl} 
 
-    cart_dict = {}
-    if not session:                                 # if nothing has been added to cart yet
-        shoe_info = []
-        return render_template('cart.html', shoe_info=shoe_info)
-
-    for id in session['cart']:
-        cart_dict[id] = cart_dict.setdefault(id, 0) + 1
-
-    shoe_info = []
-    for id in cart_dict.keys():
-        shoe = model.Shoe.get_by_id(id)
-        name = shoe.common_name
-        price = shoe.price
-        img = shoe.imgurl
-        num = cart_dict[id]
-        shoe_info.append((name, num, price,img))
-
-    return render_template("cart.html", shoe_info=shoe_info)
+    return render_template("cart.html", cart_items = shoe_dictionary, total = total_cost)
 
 
 @app.route("/add_to_cart/<int:id>")

@@ -22,31 +22,27 @@
         </nav>
         </header>
         <div id='content' class='shop'>
-        <div class="menu-trigger"></div>
-            <center><h2>Cart</h2></center>
-            {% for shoe in shoe_info %}
-            <!-- prints out the id on page replace id with image -->
-            <img src='{{shoe[3]}}' />
-        <ul>
-            <li>{{ shoe[0] }}</li><!--id -->
-            <li>{{ shoe[1] }}</li><!--name -->
-            <li>${{ shoe[2] }}</li><!--price -->
-            <li>${{ shoe[1] * shoe[2] }}</li>
-            
-        </ul>
-            
-             {% endfor %}
-            <a href="/clearcart" class="btn btn-large btn-default">Clear Cart</a>
-            <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
-            <center><button class='checkout'><a href="/checkout">Checkout</a></button></center>
-            <center><a  href="/buy"></a><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"></center>
-               <!--  <center><button>Checkout<a><script src="/static/js/paypal-button.min.js?merchant=highfashionentertainment@gmail.com"
-    data-button="buynow"
-    data-name=""
-    data-amount=""
-    async
-></script></a></button></center> -->
+         <div class="menu-trigger"></div>
+            <center><h2>Cart</h2></center>   
 
+    {% for key,value in cart_items.iteritems() %}
+         
+        <h4>{{value["Name"]}}</h4>
+        <img src='{{value["Img"]}}' />
+        <h5>Quanity: {{value["Quantity"]}}</h5> 
+       <!-- <h5>${{"%.2f" % value["Price"]}}</h5> -->
+        <h5>${{"%.2f" % (value["Quantity"] * value["Price"])}}</h5>
+    {% endfor %}
+
+    <h3>Total: ${{ "%.2f" % total }}</h3>
+    <a href="/clearcart" class="btn btn-large btn-default">Clear Cart</a>
+    <center><a class='basicback' href="{{ url_for('shop') }}">Contiune shopping</a> </center>
+    <center><button class='checkout'><a href="/checkout">Checkout</a></button></center>
+    <center><a href="/buy"><img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"></a></center>
+
+
+        
+     
 </div>
 <script src="/static/js/main1.js"></script>
     </body>
